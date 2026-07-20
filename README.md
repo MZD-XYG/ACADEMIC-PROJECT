@@ -1,6 +1,6 @@
 # My Coding Projects
 
-Hi! This is a collection of my coding projects from my university assignments and personal learning.
+Hi! This is a collection of my coding projects from my college assignments and personal learning.
 
 ## 1. Drinktastic Website
 - **Description:** A web-based application to track daily water intake.
