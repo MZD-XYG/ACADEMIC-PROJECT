@@ -25,7 +25,7 @@ Hi! This is a collection of my coding projects from my university assignments an
 
 - **Link:** 🔗 [View App / Demo](https://app.flutterflow.io/project/duplicate-78qmoa)
 - **Description:** A mobile application designed for browsing and managing kids' clothing products.
-- **Tech Stack:** FlutterFlow, Firebase
+- **Tech Stack:** FlutterFlow
 - **Key Features:** User authentication, dynamic product database, customized user interface.
 - **Goal:** To create a seamless mobile shopping experience with a fully integrated backend database.
   
