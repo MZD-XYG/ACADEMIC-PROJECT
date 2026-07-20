@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="icon" type="image/x-icon" href="image/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <title>Water Content in Body Organs</title>
+    <style>
+        body {
+            font-family: "Righteous", sans-serif;
+            background-color: #fafafa;
+            margin-top: 110px;
+        }
+
+        .cursor {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #081f5c;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: .1s;
+            z-index: 15;
+        }
+        
+        .cursor2 {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background-color: #081f5c;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: .15s;
+            z-index: 15;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            margin-top: 50px;
+        }
+
+        
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 100px 100px;
+            padding: 50px;
+            margin: 0px 300px 0px 300px;
+        }
+
+        .icon {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 350px;
+            height: 350px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 35px 30px rgba(0, 0, 0, 0.15);
+            transition: 0.5s;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .icon.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .icon:hover {
+            height: 450px;
+        }
+
+        .imgBox {
+            position: absolute;
+            top: 30px;
+            width: 250px;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.5s;
+            animation: mymove 1.5s infinite;
+        }
+
+        @keyframes mymove {
+            0% { transform: translate(0px, 0px); }
+            50% { transform: translate(0px, -10px); }
+            100% { transform: translate(0px, 0px); }
+        }
+
+        .icon:hover .imgBox {
+            top: -100px;
+            scale: 0.75;
+        }
+
+        .imgBox img {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content {
+            position: absolute;
+            top: 300px;
+            width: 100%;
+            height: 30px;
+            padding: 0 20px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .icon:hover .content {
+            top: 200px;
+            height: 290px;
+        }
+
+        .content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .content p {
+            margin-top: 20px;
+            text-align: justify;
+            line-height: 20px;
+            font-size: 18px;
+        }
+
+        .content a {
+            position: relative;
+            top: 15px;
+            display: inline-block;
+            padding: 8px 20px;
+            background: #333;
+            color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 1500px) {
+            .container {
+                margin: 0px 0px 0px 0px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .container {
+                margin: 0px 100px 0px 100px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                flex-direction: column;
+                margin: 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo"><a href="landing1.html"><img src="image/logo.png" width="75px" height="75px"></a></label>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a class="active" href="infographic.html">Info</a></li>
+            <li class="dropdown">
+                <a href="#">Tips <span class="floating-arrow">&#11206;</span></a>
+                <ul class="dropdown-content">
+                  <li><a href="video.html">Essential Hydration</a></li>
+                  <li><a href="video2.html">Hydration and Health</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+  <div class="drop-container">
+    <div class="drop"></div>
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+  </div>
+    <h1>Water Content in Body Organs</h1>
+    <div class="container">
+        <div class="icon brain">
+            <div class="imgBox">
+                <img src="image/brain-icon.png" alt="">
+            </div>
+            <div class="content">
+                <h2>Brain</h2>
+                <p>Brain: 73% water</p>
+                <p>The brain controls and coordinates actions and reactions, allows us to think and feel, and enables us to have memories and feelings.</p>
+                
+            </div>
+        </div>
+
+        <div class="icon lungs">
+            <div class="imgBox">
+                <img src="image/lungs-icon.png" alt="">
+            </div>
+            <div class="content">
+                <h2>Lungs</h2>
+                <p>Lungs: 83% water</p>
+                <p>The lungs are responsible for the exchange of oxygen and carbon dioxide between the air we breathe and our blood.</p>
+            </div>
+        </div>
+
+        <div class="icon stomach">
+            <div class="imgBox">
+                <img src="image/stomach-icon.png" alt="">
+            </div>
+            <div class="content">
+                <h2>Stomach</h2>
+                <p>Stomach: 75% water</p>
+                <p>The stomach breaks down food into a usable form, extracting necessary nutrients to provide energy and building blocks for the body.</p>
+            </div>
+        </div>
+
+        <div class="icon heart">
+            <div class="imgBox">
+                <img src="image/heart-icon.png" alt="">
+            </div>
+            <div class="content">
+                <h2>Heart</h2>
+                <p>Heart: 73% water</p>
+                <p>The heart pumps blood throughout the body, supplying oxygen and nutrients to tissues and removing carbon dioxide and other wastes.</p>
+             
+            </div>
+        </div>
+
+        <div class="icon liver">
+            <div class="imgBox">
+                <img src="image/liver-icon.png" alt="">
+            </div>
+            <div class="content">
+                <h2>Liver</h2>
+                <p>Liver: 71% water</p>
+                <p>The liver processes nutrients absorbed from the gut, detoxifies harmful substances, and produces proteins and biochemicals necessary for digestion and growth.</p>
+              
+            </div>
+        </div>
+
+        <div class="icon kidneys">
+            <div class="imgBox">
+                <img src="image/kidney-icon.png" alt="">
+            </div>
+            <div class="content">
+                <h2>Kidneys</h2>
+                <p>Kidneys: 79% water</p>
+                <p>The kidneys filter waste products from the blood, regulate blood pressure, and maintain the balance of electrolytes and other substances in the body.</p>
+             
+            </div>
+        </div>
+
+        <div class="icon joints" style="margin-bottom: 90px;">
+            <div class="imgBox">
+                <img src="image/joints-icon.png" alt="">
+            </div>
+            <div class="content">
+                <h2>Joints</h2>
+                <p>Joints: 80% water</p>
+                <p>Joints connect bones, allow movement and provide mechanical support. They are essential for locomotion and a range of bodily movements.</p>
+               
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Drinktastic. All rights reserved.</p>
+      </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const icons = document.querySelectorAll('.icon');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    } else {
+                        entry.target.classList.remove('in-view');
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            icons.forEach(icon => {
+                observer.observe(icon);
+            });
+        });
+
+        var cursor = document.querySelector(".cursor");
+        var cursor2 = document.querySelector(".cursor2");
+        document.addEventListener("mousemove", function(e) {
+        cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+        });
+    </script>
+</body>
+</html>

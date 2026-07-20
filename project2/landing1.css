@@ -1,0 +1,206 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  "Righteous", sans-serif;
+}
+
+body {
+    overflow: hidden;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    height: 100%;
+    animation: fade-in 2s ease-in-out; 
+}
+
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.drop-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 200px;
+    width: 200px;
+}
+
+.drop {
+    position: absolute;
+    top: -25%;
+    width: 100%;
+    height: 100%;
+    border-radius: 100% 5% 100% 100%;
+    transform: rotate(-45deg);
+    margin: 0px;
+    background: deepskyblue;
+    animation: drip 4s forwards;
+}
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.drop-container:before,
+.drop-container:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 55%;
+    right: 50%;
+    transform: translate(50%) rotateX(75deg);
+    border-radius: 100%;
+    opacity: 0;
+    width: 75%;
+    height: 75%;
+    border: 5px solid skyblue;
+    animation: dripple 2s ease-out 1s;
+}
+
+.drop-container:after {
+    animation: dripple 3s ease-out 1.7s;
+}
+
+@keyframes drip {
+    0% {
+        top: -25%;
+        border-radius: 100% 5% 100% 100%;
+        transform: rotate(-45deg);
+        opacity: 1;
+    }
+    45% {
+        top: 0;
+        border-radius: 100% 5% 100% 100%;
+        transform: rotate(-45deg);
+    }
+    100% {
+        top: 0;
+        transform: rotate(0deg);
+        border-radius: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes dripple {
+    0% {
+        width: 150px;
+        height: 150px;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        top: -20%;
+        opacity: 0;
+    }
+}
+
+.ball {
+    position: absolute;
+    border-radius: 100%;
+    opacity: 0.7;
+}
+
+.cursor {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #6F96D1;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .1s;
+}
+
+.cursor2 {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: #081f5c;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .15s;
+}
+
+.content:hover ~ .cursor {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: #081f5c;
+    opacity: .5;
+}
+
+.content:hover ~ .cursor2 {
+    opacity: 0;
+}
+
+h1 {
+    color: #081f5c;
+}
+
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Cabin+Condensed);
+
+   
+    body {
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    svg {
+      font-weight: bold;
+      max-width: 100%;
+      height: 550px;
+      font-size: 180px;
+     top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 2;
+    margin: auto;
+    text-align: center;
+    opacity: 0;
+    animation: appear 2s 2.5s forwards;
+    font-family: 'Times New Roman', Times, serif;
+    word-spacing: 20px;
+}
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink Water Reminder</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="icon" type="image/x-icon" href="image/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+<nav>
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+  </label>
+  <label class="logo"><a href="landing1.html"><img src="image/logo.png" width="75px" height="75px"></a></label>
+  <ul>
+      <li><a class="active" href="home.html">Home</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="infographic.html">Info</a></li>
+      <li class="dropdown">
+        <a href="#">Tips <span class="floating-arrow">&#11206;</span></a>
+          <ul class="dropdown-content">
+            <li><a href="video.html">Essential Hydration</a></li>
+            <li><a href="video2.html">Hydration and Health</a></li>
+          </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<body>
+    <div class="drop-container">
+        <div class="drop"></div>
+        <div class="cursor"></div>
+        <div class="cursor2"></div>
+      </div>
+<center>
+    <h1>Today Goal : 2 liters</h1>
+    <div class="container1">
+        <video class="character" id="character" width="300" height="300" muted>
+            <source src="animation/fish1.mp4" type="video/mp4">
+            <source src="animation/fish2.mp4" type="video/mp4">
+            <source src="animation/fish3.mp4" type="video/mp4">
+            <source src="animation/fish4.mp4" type="video/mp4">
+            <source src="animation/chic1.mp4" type="video/mp4">
+            <source src="animation/fish1.mp4" type="video/mp4">
+            <source src="animation/fish2.mp4" type="video/mp4">
+            <source src="animation/fish3.mp4" type="video/mp4">
+            <source src="animation/fish4.mp4" type="video/mp4">
+        </video>
+        <div id="speechBubble" class="speech-bubble" style="display:none;"></div>
+        <div class="outer">
+            <div class="left">
+                <div class="leftcircle"></div>
+            </div>
+            <div class="right">
+                <div class="rightcircle"></div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button id="drinkButton" onclick="add()">ADD 125ml</button>
+        <audio id="drinkSound" src="audio/drink.m4a" preload="auto"></audio>
+    </div>
+
+    <script src="script.js"></script>
+    
+</center>    
+<footer>
+    <p>&copy; 2024 Drinktastic. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="icon" type="image/x-icon" href="image/logo.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+</head>
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo"><a href="landing1.html"><img src="image/logo.png" width="75px" height="75px"></a></label>
+    <ul>
+        <li><a  href="home.html">Home</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="infographic.html">Info</a></li>
+        <li class="dropdown">
+            <a href="#">Tips<span class="floating-arrow">&#11206;</span></a>
+            <ul class="dropdown-content">
+              <li><a href="video.html">Essential Hydration</a></li>
+              <li><a href="video2.html">Hydration and Health</a></li>
+            </ul>
+        </li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+<div class="drop-container">
+    <div class="drop"></div>
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+  </div>
+
+<body style="margin-top: 110px;">
+    <div class="container">
+        <div class="item">
+            <div class="contact">
+                <div class="first-text">Let's get in touch</div>
+                <div class="social-links">
+                    <span class="secnd-text">Connect with us:</span>
+                    <div class="info">
+                        <div class="info-item">
+                            <img src="image/location.png" alt="Location">
+                            <p>Lot B, Jalan Ekoflora Utama, Taman Ekoflora, 81100 Johor Bahru, Johor</p>
+                        </div>
+                        <div class="info-item">
+                            <img src="image/email.png" alt="E-mail">
+                            <p>drinktastic123@gmail.com</p>
+                        </div>
+                        <div class="info-item">
+                            <img src="image/phone.png" alt="Phone">
+                            <p>019-8765 4321</p>
+                        </div>
+                    </div>
+                    <ul class="social-media">
+                        <li><a href="https://www.facebook.com/profile.php?id=100070654163761"><i class='bx bxl-facebook'></i></a></li>
+                        <li><a href="https://x.com/drinktastic"><i class='bx bxl-twitter'></i></a></li>
+                        <li><a href="https://www.youtube.com/user/drinktastic/about"><i class='bx bxl-youtube'></i></a></li>
+                        <li><a href="https://www.linkedin.com/posts/rosanamcphee_foodstylists-foodstyling-workinginfood-activity-7090619474709463043-qsUL"><i class='bx bxl-linkedin'></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="submit-form">
+                <h4 class="third-text text">Contact Us</h4>
+                <form action="submit_form.php" method="post">
+                    <div class="input-box">
+                        <input type="text" name="name" class="input" required>
+                        <label for="">Name</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" name="email" class="input" required>
+                        <label for="">E-mail</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" name="phone" class="input" required>
+                        <label for="">Phone</label>
+                    </div>
+                    <div class="input-box">
+                        <textarea name="message" class="input" required id="message" cols="30" rows="10"></textarea>
+                        <label for="">Message</label>
+                    </div>
+                    <div class="button-container">
+                        <button class="button1" type="button" onclick="window.location.href='landing1.html'"><span>Back</span></button>
+                        <button class="button2" type="submit"onclick="window.location.href='thanku.html'"><span>Submit</span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Drinktastic. All rights reserved.</p>
+      </footer>
+</body>
+<script>
+        var cursor = document.querySelector(".cursor");
+    var cursor2 = document.querySelector(".cursor2");
+    document.addEventListener("mousemove", function(e) {
+      cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const container = document.querySelector(".container");
+    container.classList.add("fade-in");
+
+    // Adding a slight delay to allow the transition to be visible
+    setTimeout(() => {
+      container.classList.add("show");
+    }, 10);
+  });
+  
+</script>
+</html>

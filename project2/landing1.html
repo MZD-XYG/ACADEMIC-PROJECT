@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="landing1.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="icon" type="image/x-icon" href="image/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+ 
+  </head>
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><a href="landing1.html"><img src="image/logo.png" width="75px" height="75px"></a></label>
+      <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="calculator.html">Calculator</a></li>
+          <li><a href="infographic.html">Info</a></li>
+          <li class="dropdown">
+            <a href="#">Tips <span class="floating-arrow">&#11206;</span></a>
+              <ul class="dropdown-content">
+                <li><a href="video.html">Essential Hydration</a></li>
+                <li><a href="video2.html">Hydration and Health</a></li>
+              </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+  </nav>
+        
+  <svg viewBox="0 0 120 30">
+    <defs>
+      <linearGradient id="gradient">
+        <stop offset="0%" stop-color="#0b1957"/>
+      </linearGradient>
+      <pattern id="wave" x="0" y="-0.5" width="100%" height="100%" patternUnits="userSpaceOnUse">
+        <path id="wavePath" d="M-40 12 Q-30 6 -20 12 T0 12 T20 12 T40 12 T60 12 T80 12 T100 12 T120 12 V30 H-40z" mask="url(#mask)" fill="url(#gradient)"> 
+          <animateTransform
+              attributeName="transform"
+              begin="0s"
+              dur="1.5s"
+              type="translate"
+              from="0,0"
+              to="40,0"
+              repeatCount="indefinite" />
+        </path>
+      </pattern>
+    </defs>
+    <text text-anchor="middle" x="60" y="20" font-size="17" fill="white" fill-opacity="0.1"> DRINKTASTIC </text>
+    <text text-anchor="middle" x="60" y="20" font-size="17" fill="url(#wave)" fill-opacity="1"> DRINKTASTIC </text>
+  </svg>
+
+          
+<div class="drop-container">
+  <div class="drop"></div>
+  <div class="cursor"></div>
+  <div class="cursor2"></div>
+</div>
+
+<footer>
+  <p>&copy; 2024 Drinktastic. All rights reserved.</p>
+</footer>
+
+</body>
+
+<script>
+    const colors = ["#D0E4FF", "#BAD6EB", "#D0E4FF", "#6F96D1", "#344EAD"];
+    const numBalls = 55;
+    const balls = [];
+
+    for (let i = 0; i < numBalls; i++) {
+        let ball = document.createElement("div");
+        ball.classList.add("ball");
+        ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+        ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+        ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+        ball.style.transform = `scale(${Math.random()})`;
+        ball.style.width = `${Math.random()}em`;
+        ball.style.height = ball.style.width;
+
+        balls.push(ball);
+        document.body.append(ball);
+    }
+
+    // Keyframes
+    balls.forEach((el, i, ra) => {
+        let to = {
+            x: Math.random() * (i % 2 === 0 ? -11 : 11),
+            y: Math.random() * 12
+        };
+
+        el.animate(
+            [
+                { transform: "translate(0, 0)" },
+                { transform: `translate(${to.x}rem, ${to.y}rem)` }
+            ],
+            {
+                duration: (Math.random() + 1) * 2000, // random duration
+                direction: "alternate",
+                fill: "both",
+                iterations: Infinity,
+                easing: "ease-in-out"
+            }
+        );
+    });
+
+    var cursor = document.querySelector(".cursor");
+    var cursor2 = document.querySelector(".cursor2");
+    document.addEventListener("mousemove", function(e) {
+        cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+    });
+    
+</script> 
+</html>

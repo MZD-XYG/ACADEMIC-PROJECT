@@ -1,0 +1,157 @@
+
+:root {
+    --border-color: #144fc6;
+    --fill-color: #6ab3f8;
+    background-color: #fAFAFA;
+
+}
+.cursor {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #081f5c;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .1s;
+    z-index: 15;
+  }
+  
+  .cursor2 {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: #081f5c;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .15s;
+    z-index: 15;
+  }
+  
+* {
+    box-sizing: border-box;
+    font-family:  "Righteous", sans-serif;
+}
+
+center{
+    margin-top: 110px;
+}
+
+h1 {
+    margin: 10px 0 0;
+    margin-bottom: 40px;
+}
+
+.button-container {
+    margin: 20px;
+}
+
+button {
+    margin-top: 50px;
+    padding: 10px 50px;
+    font-size: 42px;
+    background-color: var(--fill-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5a9fde;
+}
+
+.container1 {
+    position: relative;
+    width: 450px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.character {
+    width: 300px;
+    position: relative;
+    z-index: 4; 
+}
+
+.outer {
+    display: flex;
+    position: absolute; 
+    z-index: 5; 
+}
+
+.left {
+    position: relative;
+    width: 200px; 
+    height: 400px; 
+    overflow: hidden;
+}
+
+.leftcircle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px; 
+    height: 400px; 
+    border: 40px solid gainsboro; 
+    border-radius: 50%;
+    border-bottom-color: skyblue;
+    border-left-color: skyblue;
+    transform: rotate(-135deg);
+    transition: transform .5s;
+}
+
+.right {
+    position: relative;
+    width: 200px; 
+    height: 400px; 
+    overflow: hidden;
+}
+
+.rightcircle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 400px; 
+    border: 40px solid gainsboro; 
+    border-radius: 50%;
+    border-top-color: skyblue;
+    border-right-color: skyblue;
+    transform: rotate(-135deg);
+    transition: transform .5s;
+}
+
+.speech-bubble {
+    position: absolute;
+    bottom: 85%; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    z-index: 15;
+}
+
+@media (max-width: 500px) {
+    .character {
+        left: 0%;
+    }
+    .outer {
+        left: 5%;
+    }
+}
+

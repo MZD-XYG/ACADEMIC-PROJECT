@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+*{
+  box-sizing:border-box;
+ /* outline:1px solid ;*/
+}
+
+body{
+  background: #6F96D1;
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.cursor {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #081f5c;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .1s;
+    z-index: 15;
+  }
+  
+  .cursor2 {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: #081f5c;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .15s;
+    z-index: 15;
+  }
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.30s linear 0s;
+}
+
+.wrapper-1{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper-2{
+  padding: 10px;
+  text-align:center;
+}
+h1{
+  font-family: 'Righteous';
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing:3px;
+  color: #fafafa;
+  margin:0;
+  margin-top: 30px;
+  margin-bottom:30px;
+}
+.wrapper-2 p{
+  margin:0;
+  font-size:1.3em;
+  color:#fafafa;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing:1px;
+  line-height: 1.5;
+}
+.go-home{
+  background: hsl(206, 100%, 91%);
+  border:none;
+  padding: 15px 15px;
+  margin: 30px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.go-home:hover{
+  opacity: 0.9;
+}
+.go-home a{
+  font-family: 'Righteous';
+  font-size: 18px;
+  font-weight: 700!important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+}
+
+a{
+  color: #091F5B;
+}
+
+.go-home {
+  background: hsl(206, 100%, 91%);
+  border: none;
+  padding: 15px 15px;
+  margin: 30px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.go-home:hover {
+  background-color: #75c3ff; 
+}
+
+.go-home:active {
+  transform: translateY(2px); 
+}
+
+.go-home a {
+  font-family: 'Righteous';
+  font-size: 18px;
+  font-weight: 700!important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #091F5B;
+  text-decoration: none;
+}
+
+@media (min-width: 2000px) {
+.wrapper-2{
+      margin-top: 40%;
+      transform: scale(1.5);
+}
+}
+
+@media (min-width:360px){
+  h1{
+    font-size:48px;
+  }
+  .wrapper-2 p{
+    font-size: 20px;
+  }
+  .go-home{
+    margin-bottom:20px;
+  }
+}
+
+@media (min-width:600px){
+  .thankyoucontent{
+  max-width:1000px;
+  margin:0 auto;
+}
+  .wrapper-1{
+  height: initial;
+  max-width:620px;
+  margin:0 auto;
+  margin-top:50px;
+  }
+
+.thankyoucontent{
+   margin-top: 120px;
+}  
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .thank {
+    animation: bounce 1s infinite;
+  }
+
+}
+footer {
+  background-color: #0b1957;
+  color: white;
+  text-align: center;
+  padding: 10px 0; 
+  position: fixed; 
+  bottom: 0;
+  width: 100%; 
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); 
+  z-index: 1000;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px; 
+}
+</style>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="icon" type="image/x-icon" href="image/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+	<title>Thank You</title>
+</head>
+<body>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo"><a href="landing1.html"><img src="image/logo.png" width="75px" height="75px"></a></label>
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="infographic.html">Info</a></li>
+        <li class="dropdown">
+          <a href="#">Tips <span class="floating-arrow">&#11206;</span></a>
+            <ul class="dropdown-content">
+              <li><a href="video.html">Essential Hydration</a></li>
+              <li><a href="video2.html">Hydration and Health</a></li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+<div class="drop-container">
+  <div class="drop"></div>
+  <div class="cursor"></div>
+  <div class="cursor2"></div>
+</div>
+    <div class="thankyoucontent">
+        <div class="wrapper-1">
+           <div class="wrapper-2">
+              <img src="https://i.ibb.co/Lkn7rkG/thank-you-envelope.png" class="thank" alt="thank-you-envelope" border="0" height="200px" width="200px">
+            <h1>Thank you!</h1>
+             <p>for contacting us, we will reply promptly</p> 
+             <p>once your message is received. </p>
+             <button class="go-home" id="homeButton"><a href="landing1.html">home page</a></button>
+           </div>
+       </div>
+       <audio id="clickAudio" src="audio/click.mp3"></audio>
+    </div>
+    <footer>
+        <p>&copy; 2024 DRINKTASTIC. All rights reserved.</p>
+    </footer>
+</body>
+
+<script>
+  var cursor = document.querySelector(".cursor");
+  var cursor2 = document.querySelector(".cursor2");
+  document.addEventListener("mousemove", function(e) {
+    cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+  });
+
+  var clickAudio = document.getElementById("clickAudio");
+  var homeButton = document.getElementById("homeButton");
+  homeButton.addEventListener("click", function() {
+    clickAudio.play();
+  });
+</script>
+</html>

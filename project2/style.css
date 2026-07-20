@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #6F96D1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 70px;
+    margin-left: 50px; 
+    padding-right: 40px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.item {
+    width: 100%;
+    height: 550px;
+    max-width: 820px;
+    background: #FFF9EF;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, .4);
+    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    z-index: 1000;
+}
+
+p{
+    color: #091F5B;
+}
+
+span{
+    color: #091F5B;
+}
+
+.contact {
+    background: #FFF9EF;
+}
+
+.submit-form {
+    background: #6F96D1;
+}
+
+.first-text {
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 35px;
+    color: #6F96D1;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.image {
+    height: 350px;
+    width: 350px;
+    margin-right: 10px;
+}
+
+.social-media {
+    display: flex;
+    list-style: none;
+    margin-left: 70px;
+}
+
+.social-media ul li {
+    padding-left: 15px;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+ul li {
+    padding-left: 15px;
+    font-size: 24px;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+i {
+    background: #6F96D1;
+    padding: 5px;
+    border-radius: 5px;
+    transition: .3s;
+    color: #FFF9EF;
+}
+
+.social-media i:hover {
+    background: #FFF9EF;
+    color: #6F96D1;
+}
+
+.secnd-text {
+    font-weight: 500;
+    color: #6F96D1;
+    padding-left: 20px;
+}
+
+.third-text {
+    font-size: 25px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    padding-top: 10px;
+    color: #FFF9EF;
+}
+
+form {
+    padding: 0 50px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.input-box {
+    height: 40px;
+    width: 70%;
+    margin: 30px 0;
+    position: relative;
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid #FFF9EF;
+    border-radius: 20px;
+    outline: none;
+    padding-left: 10px;
+    color: #FFF9EF;
+    font-size: 16px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 15px;
+    font-weight: 500;
+    color: #FFF9EF;
+    transition: .3s;
+    padding: 0 5px;
+    background: transparent;
+}
+
+.input-box .input:focus ~ label,
+.input-box .input:valid ~ label,
+.input-box textarea:focus ~ label,
+.input-box textarea:valid ~ label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #FFF9EF;
+    background: #6F96D1;
+    padding: 0 5px;
+}
+
+
+textarea.input {
+    resize: none;
+    min-height: 150px;
+    overflow: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center; /* Center the button vertically, if needed */
+    width: 100%; /* Make sure the container takes full width */
+    height: 100px; /* Adjust the height as needed */
+    margin-top: 110px;
+    margin-right: 50px;
+}
+
+.button1, 
+.button2 {
+    background: #FFF9EF;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    height: 45px;
+    width: 30%;
+    font-size: 16px;
+    color: #6F96D1;
+    cursor: pointer;
+    font-weight: 500;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.button1 span,
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after{
+ content: '\00AB';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+.button2 span:after {
+  content: '\00BB';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button1:hover span {
+  padding-left: 25px;
+}
+
+.button2:hover span {
+  padding-right: 25px;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+

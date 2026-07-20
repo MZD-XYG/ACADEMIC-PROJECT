@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="calculator.css">
+  <link rel="icon" type="image/x-icon" href="image/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo"><a href="landing1.html"><img src="image/logo.png" width="75px" height="75px"></a></label>
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a class="active" href="calculator.html">Calculator</a></li>
+        <li><a href="infographic.html">Info</a></li>
+        <li class="dropdown">
+             <a href="#">Tips <span class="floating-arrow">&#11206;</span></a>
+            <ul class="dropdown-content">
+              <li><a href="video.html">Essential Hydration</a></li>
+              <li><a href="video2.html">Hydration and Health</a></li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+<div class="drop-container">
+  <div class="drop"></div>
+  <div class="cursor"></div>
+  <div class="cursor2"></div>
+</div>
+    <div class="container">
+        <div class="box">
+          <h1>Tell us about yourself</h1>
+          <div class="divider">
+            <div class="divider-text">Gender</div>
+          </div>
+          <label>
+            <input type="radio" name="gender" value="male" checked>
+            <img src="image/option1.png" alt="Option 1" height="100px" width="90px">
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female">
+            <img src="image/option2.png" alt="Option 2" height="100px" width="90px">
+          </label>
+          <div class="divider">
+            <div class="divider-text">Weight</div>
+          </div>
+          <div class="content">
+            <div class="input">
+              <input type="number" id="weight"> KG
+            </div>
+          </div>
+          <div class="divider">
+            <div class="divider-text2">Additional info</div>
+          </div>
+          <label>
+            <input type="checkbox" name="info" value="pregnant">
+            <img src="image/option3.png" alt="Option 3" height="120px" width="90px">
+          </label>
+          <label>
+            <input type="checkbox" name="info" value="active">
+            <img src="image/option4.png" alt="Option 4" height="120px" width="90px">
+          </label>
+          <label>
+            <input type="checkbox" name="info" value="sedentary"> 
+            <img src="image/option5.png" alt="Option 5" height="120px" width="90px">
+          </label>
+          <div class="content">
+            <div id="error-message">Error: Males cannot be pregnant.</div>
+            <button id="calculate">Calculate Daily Water Intake</button>
+            <audio id="drinkSound" src="audio/click.mp3" preload="auto"></audio>
+            <div class="result">
+              <p>Your recommended daily water intake is</p>
+              <div id="result">00.00</div>
+              <p class="comment"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>&copy; 2024 Drinktastic. All rights reserved.</p>
+      </footer>
+<script>
+const btn = document.getElementById("calculate");
+
+btn.addEventListener("click", function () {
+    let weight = document.querySelector("#weight").value;
+    let gender = document.querySelector('input[name="gender"]:checked').value;
+    let errorMessage = document.getElementById("error-message");
+
+    // Check for male and pregnant combination
+    if (gender === "male" && document.querySelector('input[name="info"][value="pregnant"]').checked) {
+        errorMessage.style.display = "block";
+        return;
+    } else {
+        errorMessage.style.display = "none";
+    }
+
+    if (weight == "") {
+        alert("Please fill out the weight field!");
+        return;
+    }
+
+    // Water intake calculation based on gender and weight
+    let waterIntake;
+
+    if (gender === "male") {
+        waterIntake = weight * 35; // ml per kg for males
+    } else if (gender === "female") {
+        waterIntake = weight * 31; // ml per kg for females
+    }
+
+    // Adjustments based on additional info
+    const infoChecks = document.querySelectorAll('input[name="info"]:checked');
+    let additionalInfo = [];
+    infoChecks.forEach(info => {
+        additionalInfo.push(info.value);
+    });
+
+    // Adjust water intake based on additional info
+    if (additionalInfo.includes("pregnant")) {
+        waterIntake += 300; // Add 300 ml for pregnant
+    }
+    if (additionalInfo.includes("active")) {
+        waterIntake += 500; // Add 500 ml for active
+    }
+    if (additionalInfo.includes("sedentary")) {
+        waterIntake -= 200; // Subtract 200 ml for sedentary
+    }
+
+    // Convert to liters and fix to 2 decimal places
+    waterIntake = (waterIntake / 1000).toFixed(2);
+
+    document.querySelector("#result").innerHTML = `${waterIntake} Liters`;
+
+    let comment = `Based on your gender, weight, and additional information, it is recommended to drink ${waterIntake} liters of water daily.`;
+
+    document.querySelector(".comment").innerHTML = comment;
+
+    drinkSound.play();
+});
+
+var cursor = document.querySelector(".cursor");
+  var cursor2 = document.querySelector(".cursor2");
+  document.addEventListener("mousemove", function(e) {
+    cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+  });
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const container = document.querySelector(".container");
+    container.classList.add("fade-in");
+
+    // Adding a slight delay to allow the transition to be visible
+    setTimeout(() => {
+      container.classList.add("show");
+    }, 10);
+  });
+
+</script>
+</body>
+</html>
