@@ -23,7 +23,7 @@ Hi! This is a collection of my coding projects from my university assignments an
 
 ### 4. Kid Clothes E-Commerce App
 
-- **Link:** 🔗 [View App / Demo] (https://app.flutterflow.io/project/duplicate-78qmoa)
+- **Link:** 🔗 [View App / Demo](https://app.flutterflow.io/project/duplicate-78qmoa)
 - **Description:** A mobile application designed for browsing and managing kids' clothing products.
 - **Tech Stack:** FlutterFlow, Firebase
 - **Key Features:** User authentication, dynamic product database, customized user interface.
