@@ -28,6 +28,6 @@ Hi! This is a collection of my coding projects from my university assignments an
 - **Tech Stack:** FlutterFlow, Firebase
 - **Key Features:** User authentication, dynamic product database, customized user interface.
 - **Goal:** To create a seamless mobile shopping experience with a fully integrated backend database.
-- 
+  
 ## How to use
 You can view these projects by clicking on the folders above.
