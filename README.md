@@ -20,6 +20,14 @@ Hi! This is a collection of my coding projects from my university assignments an
 - **Tech Stack:** HTML, CSS, JavaScript
 - **Key Features:** Interactive destination visualization, 3-day itinerary overviews.
 - **Goal:** To help users quickly visualize potential trips through intuitive and interactive user experiences.
+
+### 4. Kid Clothes E-Commerce App
+
+- **Link:** 🔗 [View App / Demo](https://app.flutterflow.io/project/duplicate-78qmoa)
+- **Description:** A mobile application designed for browsing and managing kids' clothing products.
+- **Tech Stack:** FlutterFlow, Firebase
+- **Key Features:** User authentication, dynamic product database, customized user interface.
+- **Goal:** To create a seamless mobile shopping experience with a fully integrated backend database.
 - 
 ## How to use
 You can view these projects by clicking on the folders above.
