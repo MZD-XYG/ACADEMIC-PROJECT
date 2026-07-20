@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Kalam' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Kaushan Script' rel='stylesheet'>
+	<title>Explore Destinations</title>
+	
+	<embed src="Audio/River Flows In You.mp3" hidden="true" autostart="true" loop="true">
+	
+    <style>
+        body {
+			background-color: black;
+	        height: 100vh;
+            overflow: hidden;
+            margin: 0;
+			
+            display: flex;
+			flex-direction: column;
+            align-items: center; /*top*/
+            justify-content: center; /*left*/
+        }
+
+        .header {
+			font-family: Courgette;
+			color: white;
+			font-size: 18px; 
+            background-color: #333;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+			width: 100%;
+        }
+
+        .contact-us {
+            flex-grow: 1;
+            text-align: right;
+			margin-right: 2%;
+        }
+
+        .user-box {
+            width: 115px; 
+            height: 40px; 
+			border-radius: 50px;
+            background-color: black; 
+			margin-right: 3.5%;
+			
+            display: flex;
+            justify-content: center;
+            align-items: center;	
+		}
+		
+       .container {
+            display: flex;
+            width: 99.5%;
+			margin: auto;
+        }
+
+        .panel {
+            background-size: cover;
+            background-position: center;
+            height: 88vh;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            flex: 0.5;
+            margin: 3px;
+            position: relative;
+            -webkit-transition: all 700ms ease-in;
+			
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+        }
+		
+        .panel h1 {
+			font-family: courgette;
+            font-size: 42px;
+			position: absolute;
+            top: 10%;
+            left: 5%;
+            margin: 0;
+			opacity: 0;
+        }	
+		
+		.panel h2 {
+			font-family: Courgette;
+            font-size: 48px;
+			position: absolute;
+			writing-mode: vertical-lr; 
+			opacity: 1;
+        }
+
+        .panel h3 {
+			font-family: kalam;
+            font-size: 24px;
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            margin: 0;
+			opacity: 0;
+        }
+
+        .panel.active {
+            flex: 4;
+        }
+
+        .panel.active h1 {
+            opacity: 1;
+            transition: opacity 0.3s ease-in 0.4s;
+        }
+		
+        .panel.active h2 {
+            opacity: 0;
+            transition: opacity 0.2s ease-out 0.2s;
+        }
+
+        .panel.active h3 {
+            opacity: 1;
+            transition: opacity 0.3s ease-in 0.4s;
+        }
+		
+		button {
+			font-family: kalam;
+			color: #fff;
+			padding: 8px 22px;
+			border-radius: 6px;
+			border-color: #FFCC70;
+			background: #FFCC70;
+			transition: all 0.2s ease;
+		}
+		
+		button:active {
+			trasform: scale(0.96);
+		}
+		
+    </style>
+</head>
+
+<header class="header">
+	<div>
+		<img src="images/Logo.png" alt="logo" width="50px" height="50px" style="margin-left: 25px">
+	</div>
+	<div class="contact-us"><a href="W_file/About Us/About Us.html" style="text-decoration: none; color: white">Contact Us</a></div>	
+	<div class="user-box">
+		<img src="images/USER.png" alt="user" width="30px" height="30px">&nbsp&nbspUser
+	</div>
+</header>
+
+<body>
+    <div class="container">
+        <div class="panel active" style="background-image: url('./images/Fuji.jpg')">
+			<h1>"Fuji Majesty: Japan's Peak Adventure"</h1>
+			<h2>Japan</h2>
+            <h3><button><a href="Japan_overview.html" style="text-decoration: none; color: white">Explore More</a></button></h3>
+        </div>
+		
+        <div class="panel" style="background-image: url('./images/Sydney.jpg')">
+			<h1>"Sydney: Coastal Bliss Beckons You"</h1>
+			<h2>Australia</h2>
+            <h3><button><a href="Australia_overview.html" style="text-decoration: none; color: white">Explore More</a></button></h3>
+        </div>
+		
+        <div class="panel" style="background-image: url('./images/Spain.jpg')">
+			<h1>"Toledo: A Spanish Architectural Delight"</h1>
+			<h2>Spain</h2>
+            <h3><button><a href="Spain_overview.html" style="text-decoration: none; color: white">Explore More</a></button></h3>
+        </div>
+	</div>
+
+	<script>
+		const panels = document.querySelectorAll('.panel')
+
+		panels.forEach(panel => {
+			panel.addEventListener('click', () => {
+				removeActiveClasses()
+				panel.classList.add('active')
+			})
+		})
+
+		function removeActiveClasses() {
+			panels.forEach(panel => {
+				panel.classList.remove('active')
+			})
+		}
+	</script>
+	
+</body>
+</html>

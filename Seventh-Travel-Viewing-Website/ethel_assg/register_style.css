@@ -1,0 +1,148 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Courgette;
+}
+
+body {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background: url(Images/Blur.jpg);
+	background-size: cover;
+}
+
+.container {
+	width: 90%;
+	max-width: 650px;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 28px;
+	margin: 0 28px;
+	margin-top: 50px;
+	border-radius: 10px;
+	box-shadow: inset -2px 2px 2px white;
+}
+
+.form-title {
+	font-size: 26px;
+	font-weight: 600;
+	text-align: center;
+	padding-bottom: 6px;
+	color: white;
+	text-shadow: 2px 2px 2px black;
+	border-bottom: solid 1px white;
+}
+
+.main-user-info {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 20px 0;
+}
+
+.user-input-box:nth-child(2n) {
+	justify-content: end;
+}
+
+.user-input-box {
+	display: flex;
+	flex-wrap: wrap;
+	width: 50%;
+	padding-bottom: 15px;
+}
+
+.user-input-box label {
+	width: 95%;
+	color: white;
+	font-size: 20px;
+	font-weight: 400;
+	margin: 5px 0;
+}
+
+.user-input-box input {
+	height: 40px;
+	width: 95%;
+	border-radius: 7px;
+	outline: none;
+	border: 1px solid grey;
+	padding: 0 10px;
+}
+
+.gender-title {
+	color: white;
+	font-size: 24px;
+	font-weight: 600;
+	border-bottom: 1px solid white;
+}
+
+.gender-category {
+	margin: 15px 0;
+	color: white;
+}
+
+.gender-category label {
+	padding: 0 20px 0 5px;
+}
+
+.gender-category label,
+.gender-category input,
+.form-submit-btn input {
+	cursor: pointer;
+}
+
+.form-submit-btn {
+	margin-top: 40px;
+}
+
+.form-submit-btn input {
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+	font-size: 20px;
+	padding: 10px;
+	border: none;
+	border-radius: 3px;
+	color: white;
+	background: #FFCC70;;
+}
+
+.form-submit-btn input:hover {
+	background: green;
+	color: rgb(209, 209, 209);
+}
+
+.popup {
+	position: absolute;
+	top: -150%;
+	left: 50%;
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(1.25);	
+	transition:	top 0ms ease-in-out 200ms,
+				opacity 200ms ease-in-out 0ms,
+				transform 20ms ease-in-out 0ms;
+}
+
+.popup.active {
+	top: 50%;
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+	transition:	top 1ms ease-in-out 0ms,
+				opacity 200ms ease-in-out 0ms,
+				transform 20ms ease-in-out 0ms;
+}
+
+.popup .close-btn {
+	position: absolute;
+	top: 12%;
+	right: 10%;
+	width: 22px;
+	height: 22px;
+	background: #888;
+	color: #eee;
+	text-align: center;
+	line-align: center;
+	border-radius: 15px;
+	cursor: pointer;
+}
